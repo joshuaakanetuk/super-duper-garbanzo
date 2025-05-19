@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Github, Twitter, Youtube } from "lucide-react"
-import TikTokFeed from "@/components/tiktok-feed"
 
 export default function Home() {
   return (
