@@ -37,7 +37,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-6">
-         Coming Soon
+         Most of my stuff will be here and free!
       </main>
 
       <footer className="container mx-auto border-t border-gray-200 px-4 py-6 text-center text-sm text-gray-500">

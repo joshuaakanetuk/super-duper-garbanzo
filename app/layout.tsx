@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Source_Code_Pro } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
+import Widget from "../components/widget"
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] })
 
@@ -24,13 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script 
-        src="https://plausible.idontlikeeagles.us/js/script.js"
+        <Script
+          src="https://plausible.idontlikeeagles.us/js/script.js"
           data-domain="computeforhumans.com"
           strategy="beforeInteractive"
         />
       </head>
-      <body className={sourceCodePro.className}>{children}</body>
+      <body className={sourceCodePro.className}>{children}
+     <Widget />
+      </body>
     </html>
   )
 }
