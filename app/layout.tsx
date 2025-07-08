@@ -1,11 +1,8 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Source_Code_Pro } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
 import Widget from "../components/widget"
-
-const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Compute for Humans",
@@ -31,7 +28,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className={sourceCodePro.className}>{children}
+      <body>{children}
       </body>
     </html>
   )

@@ -4,7 +4,7 @@ import { Github, Twitter, Youtube } from "lucide-react"
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-800">
-      <header className="container mx-auto py-8 px-4">
+      <header className="max-w-prose mx-auto py-8 px-4">
         <div className="flex justify-end space-x-4">
           <Link
             href="https://x.com/compute4humans"
@@ -36,11 +36,11 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-6">
-         Most of my stuff will be here and free!
+      <main className="max-w-prose mx-auto px-4 py-6">
+         Discord coming soon!
       </main>
 
-      <footer className="container mx-auto border-t border-gray-200 px-4 py-6 text-center text-sm text-gray-500">
+      <footer className="max-w-prose mx-auto px-4 py-6 text-center text-xs text-gray-500">
         <p>© {new Date().getFullYear()} Compute for Humans. All rights reserved.</p>
       </footer>
     </div>

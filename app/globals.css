@@ -9,6 +9,8 @@
 }
 
 body {
+  font-family: "Inter", "Arial", "sans-serif";
+  font-weight: 400;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
 }
