@@ -13,7 +13,6 @@ html, body {
 }
 
 body {
-  font-family: "Inter", "Arial", "sans-serif";
   font-weight: 400;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
@@ -39,6 +38,14 @@ body {
     min-height: 0;
   }
   
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 }
 
 @layer base {

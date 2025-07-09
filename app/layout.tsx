@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
+import { Inter } from 'next/font/google'
 import "./globals.css"
 import Script from "next/script"
 import Link from "next/link"
@@ -16,13 +17,20 @@ export const viewport: Viewport = {
   themeColor: "#000000",
 }
 
+// Initialize Inter font
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <Script
           src="https://plausible.idontlikeeagles.us/js/script.js"
@@ -32,7 +40,7 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col">
         <header className="max-w-prose mx-auto py-8 px-4">
-          <div className="flex justify-end space-x-4">
+          <div className="flex flex overflow-x-auto whitespace-nowrap pb-2 hide-scrollbar justify-end space-x-4">
             <Link href={"/"} className="flex items-center space-x-2 rounded-full bg-gray-100 px-4 py-2 transition-colors hover:bg-gray-200 text-gray-800">
               <Home className="h-5 w-5" />
               <span>Home</span>
