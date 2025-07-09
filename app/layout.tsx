@@ -40,7 +40,7 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col">
         <header className="max-w-prose mx-auto py-8 px-4">
-          <div className="flex flex overflow-x-auto whitespace-nowrap pb-2 hide-scrollbar justify-end space-x-4">
+          <div className="flex flex overflow-x-auto pb-2 justify-end space-x-4">
             <Link href={"/"} className="flex items-center space-x-2 rounded-full bg-gray-100 px-4 py-2 transition-colors hover:bg-gray-200 text-gray-800">
               <Home className="h-5 w-5" />
               <span>Home</span>
@@ -49,7 +49,15 @@ export default function RootLayout({
               <MoreHorizontal className="h-5 w-5" />
               <span>Blog</span>
             </Link>
-            <Link
+          </div>
+        </header>
+        {children}
+        <footer className="max-w-prose mx-auto px-4 py-6 text-center text-xs text-gray-500 flex flex-col gap-2">
+          <div className="flex justify-center space-x-2">
+            <p>© {new Date().getFullYear()} Compute for Humans. All rights reserved.</p>
+          </div>
+          <div className="flex justify-center space-x-2">
+          <Link
               href="https://github.com/joshuaakanetuk"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,10 +90,6 @@ export default function RootLayout({
               <SiDiscord size={16} />
             </Link>
           </div>
-        </header>
-        {children}
-        <footer className="max-w-prose mx-auto px-4 py-6 text-center text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} Compute for Humans. All rights reserved.</p>
         </footer>
       </body>
     </html>
