@@ -66,7 +66,7 @@ export default function RootLayout({
               <SiGithub size={16} />
             </Link>
             <Link
-              href="https://www.youtube.com/@computeforhumans"
+              href="https://www.youtube.com/channel/UCarSlrZMBPNY3RdR44uQ_Rg"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 rounded-full bg-gray-100 px-4 py-2 transition-colors hover:bg-gray-200 text-gray-800"
