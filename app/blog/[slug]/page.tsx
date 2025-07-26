@@ -26,13 +26,13 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     openGraph: {
       title: page.og_title || page.title,
       description: page.og_description || page.excerpt,
-      images: page.og_image ? [{ url: page.og_image }] : undefined,
+      images: page.og_image ? [{ url: page.og_image }] : page.feature_image ? [{ url: page.feature_image }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: page.twitter_title || page.title,
       description: page.twitter_description || page.excerpt,
-      images: page.twitter_image ? [page.twitter_image] : undefined,
+      images: page.twitter_image ? [page.twitter_image] : page.feature_image ? [{ url: page.feature_image }] : undefined,
     },
   };
 }
