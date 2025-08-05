@@ -86,7 +86,7 @@ export default function RootLayout({
               <SiTiktok size={16} />
             </Link>
             <Link
-              href="https://discord.gg/MrwMn4dr"
+              href="https://discord.gg/vPdwQF73Gx"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 rounded-full bg-gray-100 px-4 py-2 transition-colors hover:bg-gray-200 text-gray-800"
