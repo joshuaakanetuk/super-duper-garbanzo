@@ -58,7 +58,7 @@ export default function RootLayout({
         {children}
         <footer className="max-w-prose mx-auto px-4 py-6 text-center text-xs text-gray-500 flex flex-col gap-2">
           <div className="flex justify-center space-x-2">
-            <p>© {new Date().getFullYear()} Compute for Humans. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Compute for Humans. All rights reserved!</p>
           </div>
           <div className="flex justify-center space-x-2">
           <Link
