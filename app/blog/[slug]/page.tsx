@@ -12,7 +12,8 @@ interface PageParams {
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const page = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const page = await getPostBySlug(slug);
   
   if (!page) {
     return {
@@ -47,7 +48,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: PageParams) {
-  const page = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const page = await getPostBySlug(slug);
   
   if (!page) {
     notFound();
