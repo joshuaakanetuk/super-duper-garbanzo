@@ -9,6 +9,7 @@ interface PageParams {
     slug: string;
   };
 }
+export const revalidate = 60;
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
