@@ -1,4 +1,5 @@
 import { PostOrPage } from '@tryghost/content-api';
+import Image from 'next/image';
 import React from 'react';
  
  
@@ -11,10 +12,13 @@ export function GhostPageComponent({ page }: { page: PostOrPage }) {
     <article className="max-w-prose mx-auto px-4 py-6">
       {page.feature_image && (
         <div className="mb-8">
-          <img 
-            src={page.feature_image} 
-            alt={page.title} 
+          <Image
+            src={page.feature_image}
+            alt={page.title || "Article image"}
+            width={800}
+            height={450}
             className="w-full h-auto rounded-lg shadow-md"
+            priority
           />
         </div>
       )}

@@ -8,9 +8,15 @@ import { Home, MoreHorizontal } from "lucide-react"
 import { SiTiktok, SiGithub, SiYoutube, SiDiscord } from "react-icons/si"
 import { SiKofi } from "react-icons/si"
 export const metadata: Metadata = {
+  metadataBase: new URL('https://computeforhumans.com'),
   title: "Compute for Humans",
-  description: "Exploring technology and making computing more accessible for everyone.",
-  generator: 'v0.dev'
+  description: "Privacy tips, self-hosting guides, and homelab tutorials. Learn to take control of your digital life with open-source software.",
+  openGraph: {
+    title: "Compute for Humans",
+    description: "Privacy tips, self-hosting guides, and homelab tutorials. Learn to take control of your digital life with open-source software.",
+    type: "website",
+    siteName: "Compute for Humans",
+  },
 }
 
 export const viewport: Viewport = {
@@ -36,6 +42,32 @@ export default function RootLayout({
           src="https://plausible.idontlikeeagles.us/js/script.js"
           data-domain="computeforhumans.com"
           strategy="beforeInteractive"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  name: "Compute for Humans",
+                  url: "https://computeforhumans.com",
+                },
+                {
+                  "@type": "Organization",
+                  name: "Compute for Humans",
+                  url: "https://computeforhumans.com",
+                  sameAs: [
+                    "https://github.com/joshuaakanetuk",
+                    "https://www.youtube.com/channel/UCarSlrZMBPNY3RdR44uQ_Rg",
+                    "https://www.tiktok.com/@computeforhumans",
+                    "https://discord.gg/vPdwQF73Gx",
+                  ],
+                },
+              ],
+            }),
+          }}
         />
       </head>
       <body className="flex flex-col">

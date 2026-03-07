@@ -1,4 +1,5 @@
 import { getPosts } from '@/lib/ghost';
+import Image from 'next/image';
 import Link from 'next/link';
 import { PostOrPage } from '@tryghost/content-api';
 
@@ -11,7 +12,7 @@ export default async function Home() {
       <main className="max-w-prose mx-auto px-4 py-12 flex flex-col items-center justify-center">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4">Privacy tips, self-hosting, homelabbing and more!</h1>
-          <p className="text-xl text-gray-600">An hand-me-down guide to digital independence and tech exploration.</p>
+          <p className="text-xl text-gray-600">A hand-me-down guide to digital independence and tech exploration.</p>
         </div>
 
         <div className="w-full mb-8">
@@ -25,9 +26,11 @@ export default async function Home() {
                     {post.feature_image && (
                       <div className="sm:w-1/3 mb-4 sm:mb-0 flex-shrink-0">
                         <Link href={`/blog/${post.slug}`}>
-                          <img 
-                            src={post.feature_image} 
-                            alt={post.title} 
+                          <Image
+                            src={post.feature_image}
+                            alt={post.title || "Blog post image"}
+                            width={400}
+                            height={225}
                             className="w-full h-auto object-cover rounded-md shadow-sm aspect-video"
                           />
                         </Link>

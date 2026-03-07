@@ -1,5 +1,15 @@
+import { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Clock, Lightbulb } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Homelab & Self-Hosting Consulting | Compute for Humans",
+  description: "Get personalized help setting up your homelab, self-hosted applications, media servers, and Linux infrastructure. 1-on-1 consulting sessions with hands-on guidance.",
+  openGraph: {
+    title: "Homelab & Self-Hosting Consulting | Compute for Humans",
+    description: "Get personalized help setting up your homelab, self-hosted applications, media servers, and Linux infrastructure.",
+  },
+}
 
 export default async function Consulting() {
     return (

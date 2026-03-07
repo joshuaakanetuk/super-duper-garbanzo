@@ -25,9 +25,15 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return {
     title: page.meta_title || page.title,
     description: page.meta_description || page.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: page.og_title || page.title,
       description: page.og_description || page.excerpt,
+      type: 'article',
+      publishedTime: page.published_at || undefined,
+      modifiedTime: page.updated_at || undefined,
       images: page.og_image ? [{ url: page.og_image }] : page.feature_image ? [{ url: page.feature_image }] : undefined,
     },
     twitter: {
@@ -56,8 +62,32 @@ export default async function Page({ params }: PageParams) {
     notFound();
   }
   
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: page.title,
+    description: page.meta_description || page.excerpt,
+    image: page.feature_image || undefined,
+    datePublished: page.published_at || undefined,
+    dateModified: page.updated_at || undefined,
+    url: `https://computeforhumans.com/blog/${slug}`,
+    author: {
+      "@type": "Person",
+      name: page.primary_author?.name || "Compute for Humans",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Compute for Humans",
+      url: "https://computeforhumans.com",
+    },
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-800">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main>
         <GhostPageComponent page={page} />
       </main>
