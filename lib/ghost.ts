@@ -1,4 +1,7 @@
 import GhostContentAPI from '@tryghost/content-api';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Initialize the Ghost Content API client
 const api = GhostContentAPI({

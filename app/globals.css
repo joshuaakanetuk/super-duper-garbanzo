@@ -18,6 +18,25 @@ body {
   background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
 }
 
+/* Ghost embed / YouTube responsive styling */
+.ghost-content figure.kg-embed-card {
+  width: 100%;
+}
+
+.ghost-content figure.kg-embed-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.ghost-content iframe[src*="youtube"],
+.ghost-content iframe[src*="youtu.be"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
 /* TikTok embed custom styling */
 .tiktok-embed {
   border-radius: 0.5rem;
