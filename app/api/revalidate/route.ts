@@ -67,7 +67,9 @@ export async function POST(request: Request) {
 
   const revalidated: string[] = [];
   revalidatePath("/");
-  revalidated.push("/");
+  revalidatePath("/blog");
+  revalidatePath("/sitemap.xml");
+  revalidated.push("/", "/blog", "/sitemap.xml");
 
   const currentSlug = payload.post?.current?.slug;
   const previousSlug = payload.post?.previous?.slug;
