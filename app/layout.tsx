@@ -81,10 +81,6 @@ export default function RootLayout({
               <MoreHorizontal className="h-5 w-5" />
               <span>Blog</span>
             </Link>
-            <Link href={"https://ko-fi.com/computeforhumans"} className="flex items-center space-x-2 rounded-full bg-gray-100 px-4 py-2 transition-colors hover:bg-gray-200 text-gray-800">
-              <SiKofi className="h-5 w-5" />
-              <span>Support</span>
-            </Link>
           </div>
         </header>
         {children}
