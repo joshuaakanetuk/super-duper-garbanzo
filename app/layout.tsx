@@ -39,8 +39,8 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <head>
         <Script
-          src="https://plausible.idontlikeeagles.us/js/script.js"
-          data-domain="computeforhumans.com"
+          src="https://ga.computeforhumans.com/js/script.js"
+          data-domain="ga.computeforhumans.com"
           strategy="beforeInteractive"
         />
         <script
