@@ -40,7 +40,7 @@ export default function RootLayout({
       <head>
         <Script
           src="https://ga.computeforhumans.com/js/script.js"
-          data-domain="ga.computeforhumans.com"
+          data-domain="computeforhumans.com"
           strategy="beforeInteractive"
         />
         <script
