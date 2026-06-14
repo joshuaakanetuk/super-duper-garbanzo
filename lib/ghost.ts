@@ -27,9 +27,15 @@ export async function getPosts() {
 // Get a single post by slug
 export async function getPostBySlug(slug: string) {
   return await api.posts
-    .read({
-      slug,
-    })
+    .read(
+      {
+        slug,
+      },
+      {
+        formats: ['html', 'plaintext'],
+        include: ['tags', 'authors'],
+      }
+    )
     .catch(err => {
       console.error(err);
       return null;

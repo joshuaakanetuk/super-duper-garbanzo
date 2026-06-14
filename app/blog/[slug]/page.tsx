@@ -27,6 +27,9 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     description: page.meta_description || page.excerpt,
     alternates: {
       canonical: `/blog/${slug}`,
+      types: {
+        'text/markdown': `/blog/${slug}/raw`,
+      },
     },
     openGraph: {
       title: page.og_title || page.title,

@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Compute for Humans",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
 }
 
 export const viewport: Viewport = {
