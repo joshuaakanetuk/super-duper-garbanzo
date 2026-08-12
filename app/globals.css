@@ -47,6 +47,35 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Ghost callout card styling */
+.ghost-content .kg-callout-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.ghost-content .kg-callout-emoji {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.ghost-content .kg-callout-text {
+  flex: 1;
+}
+
+.ghost-content .kg-callout-text > p:first-child {
+  margin-top: 0;
+}
+
+.ghost-content .kg-callout-text > p:last-child {
+  margin-bottom: 0;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

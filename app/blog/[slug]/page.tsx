@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getPosts } from '@/lib/ghost';
 import { GhostPageComponent } from '@/components/ghost-page';
 import { PostOrPage } from '@tryghost/content-api';
+import { buildPostJsonLd } from '@/lib/structured-data';
 
 interface PageParams {
   params: {
@@ -65,25 +66,7 @@ export default async function Page({ params }: PageParams) {
     notFound();
   }
   
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: page.title,
-    description: page.meta_description || page.excerpt,
-    image: page.feature_image || undefined,
-    datePublished: page.published_at || undefined,
-    dateModified: page.updated_at || undefined,
-    url: `https://computeforhumans.com/blog/${slug}`,
-    author: {
-      "@type": "Person",
-      name: page.primary_author?.name || "Compute for Humans",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Compute for Humans",
-      url: "https://computeforhumans.com",
-    },
-  };
+  const jsonLd = buildPostJsonLd(page, slug);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-800">

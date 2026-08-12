@@ -43,6 +43,7 @@ export async function GET() {
       <link>${escapeXml(url)}</link>
       <guid isPermaLink="true">${escapeXml(url)}</guid>
       <pubDate>${new Date(p.published_at).toUTCString()}</pubDate>
+      <dc:creator>${escapeXml(p.primary_author?.name || 'Compute for Humans')}</dc:creator>
 ${p.primary_author?.name ? `      <dc:creator>${escapeXml(p.primary_author.name)}</dc:creator>\n` : ''}${categories ? categories + '\n' : ''}      <description>${escapeXml(excerpt)}</description>
       <content:encoded><![CDATA[${html}]]></content:encoded>
     </item>`
