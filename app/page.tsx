@@ -73,39 +73,6 @@ export default async function Home() {
           )}
         </div>
         
-        <div className="mt-4">
-        <form
-          method="post"
-          action="https://list.computeforhumans.com/subscription/form"
-          className="listmonk-form w-full max-w-prose mx-auto space-y-4"
-        >
-          <div>
-            <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">Subscribe to newsletter</label>
-            <div className="mt-2 flex">
-              <div className="-mr-px grid grow grid-cols-1 focus-within:relative">
-                <input 
-                  id="email" 
-                  type="email" 
-                  name="email" 
-                  required
-                  placeholder="john@example.com" 
-                  className="col-start-1 row-start-1 block w-full rounded-l-md bg-white py-1.5 pr-3 pl-10 text-base text-gray-900 border border-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:pl-9 sm:text-sm/6" 
-                />
-                <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" className="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400 sm:size-4">
-                  <path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.88Z" />
-                </svg>
-              </div>
-              <input
-                type="submit"
-                value="Subscribe"
-                className="flex shrink-0 items-center gap-x-1.5 rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 border border-gray-300 border-l hover:bg-gray-50 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-              />
-            </div>
-          </div>
-          <input type="hidden" name="nonce" />
-          <input type="hidden" name="l" value="0b4cda7c-c534-45a0-831e-b66b9942ca44" />
-        </form>
-        </div>
       </main>
     </div>
   )
